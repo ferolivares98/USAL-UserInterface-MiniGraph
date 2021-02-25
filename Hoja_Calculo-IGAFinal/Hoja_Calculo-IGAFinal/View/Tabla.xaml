@@ -1,0 +1,57 @@
+﻿<Window x:Class="Hoja_Calculo_IGUFinal.Tabla"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hoja_Calculo_IGUFinal"
+        mc:Ignorable="d"
+        Title="Tabla" Height="600" Width="450">
+    <Grid>
+        <TabControl Name="Tabs" TabStripPlacement="Top" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 10" SelectedIndex="0">
+            <TabItem Name="Coord" Header="Coordenadas X e Y" HorizontalAlignment="Center" Padding="20,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.RowSpan="2" Grid.Column="1" Margin="5">
+                        <Label Content="Eje X" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox x:Name="textEjeX" Width="50" HorizontalAlignment="Center" TextChanged="TextEjes_TextChanged"/>
+                        <Label Content="Eje Y" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox x:Name="textEjeY" Width="50" HorizontalAlignment="Center" TextChanged="TextEjes_TextChanged"/>
+                        <Button x:Name="Add" Margin="10,20,10,10" Padding="8" IsEnabled="False" Content="Añadir" Click="Add_Click"/>
+                        <Button x:Name="Elim" Margin="10,20,10,10" Padding="8" Content="Eliminar" Click="Elim_Click"/>
+                        <Button x:Name="Mod" Margin="10,20,10,10" Padding="8" IsEnabled="False" Content="Modificar" Click="Mod_Click"/>
+                        <Button x:Name="GrafPunto" Margin="10,20,10,10" Padding="8" Content="Generar &#010;gráfica de &#010;puntos" Click="GrafPuntos_Click"/>
+                        <Button x:Name="GrafBarra" Margin="10,20,10,10" Padding="8" Content="Generar &#010;gráfica de &#010;barras" Click="GrafBarras_Click"/>
+                    </StackPanel>
+                    <ListView Name="tablaPuntos" Margin="20" MaxHeight="400" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Eje X" Width="120" DisplayMemberBinding="{Binding X}"/>
+                                <GridViewColumn Header="Eje Y" Width="120" DisplayMemberBinding="{Binding Y}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Name="Poli" Header="Rango y polinomio" HorizontalAlignment="Center" Padding="20,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

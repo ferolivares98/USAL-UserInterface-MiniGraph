@@ -1,0 +1,17 @@
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\Hoja_Calculo-IGAFinal.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\App.g.cs
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\Hoja_Calculo-IGAFinal_MarkupCompile.cache
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\Hoja_Calculo-IGAFinal_MarkupCompile.lref
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\bin\Debug\Hoja_Calculo-IGAFinal.exe.config
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\bin\Debug\Hoja_Calculo-IGAFinal.exe
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\bin\Debug\Hoja_Calculo-IGAFinal.pdb
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\Hoja_Calculo-IGAFinal.g.resources
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\Hoja_Calculo_IGAFinal.Properties.Resources.resources
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\Hoja_Calculo-IGAFinal.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\Hoja_Calculo-IGAFinal.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\Hoja_Calculo-IGAFinal.exe
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\Hoja_Calculo-IGAFinal.pdb
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\View\MainWindow.g.cs
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\View\Tabla.g.cs
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\View\MainWindow.baml
+C:\Users\Usuario\Desktop\Clase\Salamanca 20-21\InteGraficas\Practicas\Final\Hoja_Calculo-IGAFinal\Hoja_Calculo-IGAFinal\obj\Debug\View\Tabla.baml
