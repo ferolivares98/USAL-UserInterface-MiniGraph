@@ -61,6 +61,7 @@ namespace Hoja_Calculo_IGUFinal
             aj.onAplicarEscala += AplicarEscala;
         }
 
+        //Cambios en la escala de la aplicación.
         private void AplicarEscala(object sender, AjustesEventArgs e)
         {
             escala = e.escalaNueva;
@@ -84,6 +85,7 @@ namespace Hoja_Calculo_IGUFinal
             Close(); //Como Owner de tb, también la cerrará.
         }
 
+        //Elección de que Tab del TabControl de tabla se abrirá, y creación de la ventana.
         private void MenuItemAbrirCoord_Click(object sender, RoutedEventArgs e)
         {
             tb = new Tabla(1, tbvm);
@@ -102,6 +104,7 @@ namespace Hoja_Calculo_IGUFinal
             HeaderDatos.IsEnabled = false;
         }
 
+        //Desbloqueos de los botones del header ante el cierre de las ventanas secundarias.
         private void Tb_Closing(object sender, CancelEventArgs e)
         {
             HeaderDatos.IsEnabled = true;
@@ -135,7 +138,7 @@ namespace Hoja_Calculo_IGUFinal
             scaleTr.ScaleY = alto / escala;
 
             ejeX.Stroke = Brushes.Black;
-            ejeX.StrokeThickness = 0.15;
+            ejeX.StrokeThickness = 0.35;
             ejeX.X1 = -traslado;
             ejeX.Y1 = 0;
             ejeX.X2 = traslado;
@@ -145,7 +148,7 @@ namespace Hoja_Calculo_IGUFinal
             Graph.Children.Add(ejeX);
 
             ejeY.Stroke = Brushes.Black;
-            ejeY.StrokeThickness = 0.15;
+            ejeY.StrokeThickness = 0.25;
             ejeY.X1 = 0;
             ejeY.Y1 = -traslado;
             ejeY.X2 = 0;
@@ -244,6 +247,7 @@ namespace Hoja_Calculo_IGUFinal
             }
         }
 
+        //Obtenemos los puntos donde pulsamos y dejamos de pulsar el click izquierdo del ratón, y calculamos el rectangulo.
         private void BorrarPuntos_LeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             purgadoInicio.X = e.GetPosition(Graph).X;
@@ -257,7 +261,7 @@ namespace Hoja_Calculo_IGUFinal
             purgadoFin.X = e.GetPosition(Graph).X;
             purgadoFin.Y = e.GetPosition(Graph).Y;
 
-            if(purgadoInicio.X > purgadoFin.X && purgadoInicio.Y > purgadoFin.Y)
+            if(purgadoInicio.X > purgadoFin.X && purgadoInicio.Y > purgadoFin.Y) //Traducciones a rectángulo IzquierdaArriba / DerechaAbajo. Explicado en la memoria.
             {
                 aux1 = purgadoInicio;
                 purgadoInicio = purgadoFin;
@@ -336,7 +340,7 @@ namespace Hoja_Calculo_IGUFinal
 
                 if(listaP[i].Y >= 0) //Vamos a permitir marcar cualquier parte de la barra (excluyendo el grosor), no sólo el punto superior o inferior máximo.
                 {
-                    for(double j = p.Y; j <= traslado; j++)
+                    for(double j = p.Y; j <= traslado; j++) //Desde el punto original hasta el eje siendo el punto original menor.
                     {
                         pAux.X = p.X;
                         pAux.Y = j;
@@ -355,7 +359,7 @@ namespace Hoja_Calculo_IGUFinal
                 }
                 else
                 {
-                    for(double j = p.Y; j >= traslado; j--)
+                    for(double j = p.Y; j >= traslado; j--) //Desde el punto original hasta el eje siendo el punto original mayor.
                     {
                         pAux.X = p.X;
                         pAux.Y = j;

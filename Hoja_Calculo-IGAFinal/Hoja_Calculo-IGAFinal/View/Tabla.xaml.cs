@@ -13,11 +13,11 @@ namespace Hoja_Calculo_IGUFinal
         public Tabla(int flagSelectedIdex, TablaViewModel vm)
         {
             InitializeComponent();
-            EscogerVentana(flagSelectedIdex);
+            EscogerPestana(flagSelectedIdex);
             tbvm = vm;
             tablaPuntos.ItemsSource = tbvm.Modelo.listaPuntos;
         }
-        public void EscogerVentana(int flagSelectedIndex)
+        public void EscogerPestana(int flagSelectedIndex)
         {
             if (flagSelectedIndex == 1)
             {
@@ -120,6 +120,7 @@ namespace Hoja_Calculo_IGUFinal
             this.Tabs.SelectedIndex = 0;
         }
 
+        //Controla los cambios de texto y modifica acorde los colores de los bordes, señalando los disponibles.
         private void TextGradoPolinomio_TextChanged(object sender, TextChangedEventArgs e)
         {
             textVarInd.BorderBrush = Brushes.Black;

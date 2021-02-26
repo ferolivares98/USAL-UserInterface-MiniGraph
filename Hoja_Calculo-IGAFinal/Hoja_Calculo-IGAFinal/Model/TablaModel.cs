@@ -10,7 +10,7 @@ namespace Hoja_Calculo_IGUFinal.Model
 
         public TablaModel()
         {
-            listaPuntos = new ObservableCollection<Point>();
+            listaPuntos = new ObservableCollection<Point>(); //Lista que contiene los puntos del programa en todo momento.
         }
 
         public void AddPunto(Point p)

@@ -9,7 +9,7 @@ namespace Hoja_Calculo_IGUFinal.ViewModel
 
     public delegate void ViewModelDelegate(object sender, EventArgs e);
 
-    public class TablaViewModel : INotifyPropertyChanged
+    public class TablaViewModel //: INotifyPropertyChanged
     {
         private TablaModel tm;
 
@@ -28,7 +28,7 @@ namespace Hoja_Calculo_IGUFinal.ViewModel
             tm = new TablaModel();
         }
 
-        public int SelectedIndex
+        /*public int SelectedIndex
         {
             set
             {
@@ -43,7 +43,7 @@ namespace Hoja_Calculo_IGUFinal.ViewModel
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(Sele));
             }
-        }
+        }*/
 
         public void AddPunto(Point p)
         {
