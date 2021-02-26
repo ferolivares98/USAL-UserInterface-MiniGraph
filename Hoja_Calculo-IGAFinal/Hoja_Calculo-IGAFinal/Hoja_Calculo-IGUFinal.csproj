@@ -57,9 +57,16 @@
     </ApplicationDefinition>
     <Compile Include="Model\TablaModel.cs" />
     <Compile Include="ViewModel\TablaViewModel.cs" />
+    <Compile Include="View\AjustesGraph.xaml.cs">
+      <DependentUpon>AjustesGraph.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Tabla.xaml.cs">
       <DependentUpon>Tabla.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AjustesGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

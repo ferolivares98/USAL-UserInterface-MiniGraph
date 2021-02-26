@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Windows;
 
@@ -29,13 +25,14 @@ namespace Hoja_Calculo_IGUFinal.Model
 
         public void ModPunto(string nX, string nY, int indice)
         {
-            Point pChange = new Point(DoubleValue(nX), DoubleValue(nY));
+            Point pChange = new Point(Double.Parse(nX), Double.Parse(nY));
             listaPuntos[indice] = pChange;
         }
 
-        internal double DoubleValue(string text)
+        public void GenerarLista(ObservableCollection<Point> lista)
         {
-            return Double.Parse(text);
+            listaPuntos.Clear();
+            listaPuntos = lista;
         }
     }
 }

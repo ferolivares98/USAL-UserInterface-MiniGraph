@@ -1,18 +1,9 @@
 ﻿using Hoja_Calculo_IGUFinal.ViewModel;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Hoja_Calculo_IGUFinal
 {
@@ -90,6 +81,152 @@ namespace Hoja_Calculo_IGUFinal
         private void GrafBarras_Click(object sender, RoutedEventArgs e)
         {
             tbvm.DibGraficaBarras();
+        }
+
+        private void BotonGenerarPoli_Click(object sender, RoutedEventArgs e)
+        {
+            double grado, rangoPrimero, rangoSegundo;
+            double pY;
+            double varInd, gradoUno, gradoDos, gradoTres;
+            Point p;
+            ObservableCollection<Point> lista = new ObservableCollection<Point>();
+
+            grado = Double.Parse(textGradoPolinomio.Text);
+            rangoPrimero = Double.Parse(textRangoPrimero.Text);
+            rangoSegundo = Double.Parse(textRangoSegundo.Text);
+            varInd = Double.Parse(textVarInd.Text);
+            gradoUno = Double.Parse(textGradoUno.Text);
+
+            for (double i = rangoPrimero; i <= rangoSegundo; i++)
+            {
+                pY = 0;
+                if(grado == 3)
+                {
+                    gradoTres = Double.Parse(textGradoTres.Text);
+                    pY = pY + (gradoTres * i * i * i);
+                }
+                if(grado >= 2)
+                {
+                    gradoDos = Double.Parse(textGradoDos.Text);
+                    pY = pY + (gradoDos * i * i);
+                }
+                pY = pY + (gradoUno * i) + varInd;
+
+                p = new Point(i, pY);
+                lista.Add(p);
+            }
+            tbvm.GenerarPolinomio(lista);
+            tablaPuntos.ItemsSource = tbvm.Modelo.listaPuntos; //Mejor manera?
+            this.Tabs.SelectedIndex = 0;
+        }
+
+        private void TextGradoPolinomio_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            textVarInd.BorderBrush = Brushes.Black;
+            textVarInd.IsEnabled = false;
+            textGradoUno.BorderBrush = Brushes.Black;
+            textGradoUno.IsEnabled = false;
+            textGradoDos.BorderBrush = Brushes.Black;
+            textGradoDos.IsEnabled = false;
+            textGradoTres.BorderBrush = Brushes.Black;
+            textGradoTres.IsEnabled = false;
+            BotonGenerarPoli.IsEnabled = false;
+
+            double grado;
+            if(textGradoPolinomio.Text.Length > 0)
+            {
+                grado = Double.Parse(textGradoPolinomio.Text);
+                textGradoPolinomio.BorderBrush = Brushes.Green;
+                switch (grado)
+                {
+                    case 1:
+                        textGradoPolinomio.BorderBrush = Brushes.Green;
+                        textVarInd.BorderBrush = Brushes.Green;
+                        textVarInd.IsEnabled = true;
+                        textGradoUno.BorderBrush = Brushes.Green;
+                        textGradoUno.IsEnabled = true;
+                        textGradoDos.Clear();
+                        textGradoTres.Clear();
+                        ComprobacionGrados(grado);
+                        break;
+
+                    case 2:
+                        textGradoPolinomio.BorderBrush = Brushes.Green;
+                        textVarInd.BorderBrush = Brushes.Green;
+                        textVarInd.IsEnabled = true;
+                        textGradoUno.BorderBrush = Brushes.Green;
+                        textGradoUno.IsEnabled = true;
+                        textGradoDos.BorderBrush = Brushes.Green;
+                        textGradoDos.IsEnabled = true;
+                        textGradoTres.Clear();
+                        ComprobacionGrados(grado);
+                        break;
+
+                    case 3:
+                        textGradoPolinomio.BorderBrush = Brushes.Green;
+                        textVarInd.BorderBrush = Brushes.Green;
+                        textVarInd.IsEnabled = true;
+                        textGradoUno.BorderBrush = Brushes.Green;
+                        textGradoUno.IsEnabled = true;
+                        textGradoDos.BorderBrush = Brushes.Green;
+                        textGradoDos.IsEnabled = true;
+                        textGradoTres.BorderBrush = Brushes.Green;
+                        textGradoTres.IsEnabled = true;
+                        ComprobacionGrados(grado);
+                        break;
+                    default:
+                        textGradoPolinomio.BorderBrush = Brushes.Red;
+                        BotonGenerarPoli.IsEnabled = false;
+                        break;
+                }
+            }
+        }
+
+        private void TextGrados_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            BotonGenerarPoli.IsEnabled = false;
+
+            double grado;
+
+            if (textRangoPrimero.Text.Length > 0 && textRangoSegundo.Text.Length > 0) {
+                if(textGradoPolinomio.Text.Length > 0) {
+                    grado = Double.Parse(textGradoPolinomio.Text);
+                    ComprobacionGrados(grado);
+                }
+            }
+        }
+
+        private void ComprobacionGrados(double grado)
+        {
+            switch (grado)
+            {
+                case 1:
+                    if (textVarInd.Text.Length > 0 && textGradoUno.Text.Length > 0)
+                    {
+                        BotonGenerarPoli.IsEnabled = true;
+                    }
+                    break;
+
+                case 2:
+                    if (textVarInd.Text.Length > 0 && textGradoUno.Text.Length > 0 && textGradoDos.Text.Length > 0)
+                    {
+                        BotonGenerarPoli.IsEnabled = true;
+                    }
+                    break;
+
+                case 3:
+                    if (textVarInd.Text.Length > 0 && textGradoUno.Text.Length > 0 && textGradoDos.Text.Length > 0 && textGradoTres.Text.Length > 0)
+                    {
+                        BotonGenerarPoli.IsEnabled = true;
+                    }
+                    break;
+            }
+        }
+
+        public void CambiarLista(ObservableCollection<Point> lista)
+        {
+            tbvm.GenerarPolinomio(lista);
+            tablaPuntos.ItemsSource = tbvm.Modelo.listaPuntos;
         }
     }
 }

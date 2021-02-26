@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Archivo" Padding="10,0">
+            <MenuItem Name="HeaderAjustes" Header="Archivo" Padding="10,0" IsEnabled="True">
                 <MenuItem Header="Ajustes de gráfica" Click="MenuItemAjustes_Click"/>
                 <Separator/>
                 <MenuItem Header="Salir" Click="MenuItemSalir_Click"/>
@@ -19,7 +19,8 @@
             </MenuItem>
         </Menu>
         <Grid>
-            <Canvas Name="Graph" Grid.Column="0" Grid.Row="0" Margin="30,30" SizeChanged="Canvas_SizeChanged" Background="Beige"></Canvas>
+            <Canvas Name="Graph" Grid.Column="0" Grid.Row="0" Margin="30" SizeChanged="Canvas_SizeChanged" Background="WhiteSmoke"
+                    MouseLeftButtonDown="BorrarPuntos_LeftButtonDown" MouseLeftButtonUp="BorrarPuntos_LeftButtonUp" ClipToBounds="True"></Canvas>
         </Grid>
     </DockPanel>
 </Window>

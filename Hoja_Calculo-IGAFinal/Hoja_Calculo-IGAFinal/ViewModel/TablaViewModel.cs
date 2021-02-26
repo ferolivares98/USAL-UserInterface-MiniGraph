@@ -19,6 +19,7 @@ namespace Hoja_Calculo_IGUFinal.ViewModel
         public event ViewModelDelegate dibGraficaPuntos;
         public event ViewModelDelegate dibGraficaBarras;
 
+        //Referencia al modelo para obtener get/set.
         public TablaModel Modelo { get => tm; set => tm = value; }
 
         //Constructor.
@@ -75,6 +76,11 @@ namespace Hoja_Calculo_IGUFinal.ViewModel
         private void OnModPunto()
         {
             if (modPunto != null) modPunto(this, new EventArgs());
+        }
+
+        public void GenerarPolinomio(ObservableCollection<Point> lista)
+        {
+            tm.GenerarLista(lista);
         }
 
         public void DibGraficaPuntos()
